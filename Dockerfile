@@ -1,5 +1,6 @@
 # or v1.0-debian-onbuild
-FROM fluent/fluentd:v1.1.0-debian
+# FROM fluent/fluentd:v1.1.0-debian
+FROM fluent/fluentd:v1.2-debian
 
 ENV FLUENT_ELASTICSEARCH_HOST elasticsearch-logging
 ENV FLUENT_ELASTICSEARCH_PORT 9200
