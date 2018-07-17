@@ -24,7 +24,8 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev" \
                   $buildDeps \
  && rm -rf /var/lib/apt/lists/* \
            /home/fluent/.gem/ruby/2.3.0/cache/*.gem \
- && mkdir -p /fluentd/etc
+ && mkdir -p /fluentd/etc \
+ && mkdir -p /data/var/lib/docker/containers \
 VOLUME /run/log/journal
 
 COPY fluent.conf /fluentd/etc/
