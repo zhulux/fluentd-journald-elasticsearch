@@ -32,7 +32,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev ruby-dev" \
 VOLUME /fluentd/etc/
 
 COPY main.conf /fluentd/etc/
-COPY fluentd.conf /fluentd/etc/conf.d/
+COPY fluent.conf /fluentd/etc/conf.d/
 COPY output_es.conf /fluentd/etc/conf.d/
 COPY entrypoint.sh /bin/entrypoint.sh
 RUN chmod +x /bin/entrypoint.sh
