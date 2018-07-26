@@ -18,24 +18,24 @@ chown -R fluent /fluentd
 
 set -e
 # Seting dynamic variable
-if [[ -z ${FLUENT_ELASTICSEARCH_USER} ]] ; then
-    sed -i  '/FLUENT_ELASTICSEARCH_USER/d' /fluentd/etc/${FLUENTD_CONF}
-else
-    sed -i "s/FLUENT_ELASTICSEARCH_USER/$FLUENT_ELASTICSEARCH_USER/g" /fluentd/etc/${FLUENTD_CONF}
-fi
-
-if [[ -z ${FLUENT_ELASTICSEARCH_PASSWORD} ]] ; then
-    sed -i  '/FLUENT_ELASTICSEARCH_PASSWORD/d' /fluentd/etc/${FLUENTD_CONF}
-else
-    sed -i "s/FLUENT_ELASTICSEARCH_PASSWORD/$FLUENT_ELASTICSEARCH_PASSWORD/g" /fluentd/etc/${FLUENTD_CONF}
-fi
-
-if [[ -n ${FLUENT_ELASTICSEARCH_HOST} ]]; then
-    sed -i "s/FLUENT_ELASTICSEARCH_HOST/$FLUENT_ELASTICSEARCH_HOST/g" /fluentd/etc/${FLUENTD_CONF}
-fi
-
-if [[ -n ${FLUENT_ELASTICSEARCH_PORT} ]]; then
-    sed -i "s/FLUENT_ELASTICSEARCH_PORT/$FLUENT_ELASTICSEARCH_PORT/g" /fluentd/etc/${FLUENTD_CONF}
-fi
+#if [[ -z ${FLUENT_ELASTICSEARCH_USER} ]] ; then
+#    sed -i  '/FLUENT_ELASTICSEARCH_USER/d' /fluentd/etc/${FLUENTD_CONF}
+#else
+#    sed -i "s/FLUENT_ELASTICSEARCH_USER/$FLUENT_ELASTICSEARCH_USER/g" /fluentd/etc/${FLUENTD_CONF}
+#fi
+#
+#if [[ -z ${FLUENT_ELASTICSEARCH_PASSWORD} ]] ; then
+#    sed -i  '/FLUENT_ELASTICSEARCH_PASSWORD/d' /fluentd/etc/${FLUENTD_CONF}
+#else
+#    sed -i "s/FLUENT_ELASTICSEARCH_PASSWORD/$FLUENT_ELASTICSEARCH_PASSWORD/g" /fluentd/etc/${FLUENTD_CONF}
+#fi
+#
+#if [[ -n ${FLUENT_ELASTICSEARCH_HOST} ]]; then
+#    sed -i "s/FLUENT_ELASTICSEARCH_HOST/$FLUENT_ELASTICSEARCH_HOST/g" /fluentd/etc/${FLUENTD_CONF}
+#fi
+#
+#if [[ -n ${FLUENT_ELASTICSEARCH_PORT} ]]; then
+#    sed -i "s/FLUENT_ELASTICSEARCH_PORT/$FLUENT_ELASTICSEARCH_PORT/g" /fluentd/etc/${FLUENTD_CONF}
+#fi
 
 exec gosu root "$@"
